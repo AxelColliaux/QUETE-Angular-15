@@ -1,0 +1,31 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label>
+  Identifiant:
+    <input type="text" formControlName="username">
+  </label>
+
+  <div formGroupName="credentials">
+    <label>
+      Email:
+        <input type="text" formControlName="email">
+    </label>
+    <label>
+      Mot de passe:
+        <input type="text" formControlName="password">
+    </label>
+  </div>
+
+  <label>
+    Ville:
+      <input type="text" formControlName="city">
+  </label>
+  <label>
+    Code postal:
+      <input type="text" formControlName="postalCode">
+  </label>
+  <label>
+    Rue:
+      <input type="text" formControlName="street">
+  </label>
+  <button type="submit" [disabled]="!userForm.valid">Inscription</button>
+</form>
